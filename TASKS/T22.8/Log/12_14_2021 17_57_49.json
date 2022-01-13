@@ -1,0 +1,18 @@
+{
+    "T22.8/dir_to_monitor/1.txt": {
+        "size": 0,
+        "Last modification": 1639495044.8130496
+    },
+    "T22.8/dir_to_monitor/folder1/111.txt": {
+        "size": 0,
+        "Last modification": 1639495240.3688016
+    },
+    "T22.8/dir_to_monitor/folder1/folder2/1.txt": {
+        "size": 0,
+        "Last modification": 1639495062.9237256
+    },
+    "T22.8/dir_to_monitor/folder1/folder2/2.txt": {
+        "size": 1,
+        "Last modification": 1639497294.189629
+    }
+}

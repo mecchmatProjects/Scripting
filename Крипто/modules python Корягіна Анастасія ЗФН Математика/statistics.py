@@ -1,0 +1,10 @@
+import statistics
+print(statistics.mean([1,2,3,45,6.7,90]))
+a=statistics.fmean([23.5,45.0,67,1])
+print(a)
+b=statistics.geometric_mean([14,34,56,71,98,45])
+print(b)
+print(statistics.mediam([1,2,4,5,6,7,8,9,9,3,1]))
+print(statistics.median_low([1,3,5,6,78,2,32,34,56,88,0]))
+print(statistics.median_high([2,33,46,71,2,34,89,7]))
+print(statistics.stdev([1,2,3,1,5,4,3,7,8]))
