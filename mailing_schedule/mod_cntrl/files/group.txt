@@ -1,0 +1,12 @@
+a_kosheliev@knu.ua;Кошелєв Олександр Ігорович;
+senchenkov228@gmail.com;Сенченко Віталій Вікторович;
+zaporozhets.kristina@gmail.com;Запорожець Крістіна Сергіївна;
+pavlo.kacinsky6543@knu.ua;Качинський Павло Олександрович;
+ls.artem04@knu.ua;Лисих Артем Віталійович;
+rubanskiysergiy@gmail.com;Рубанський Сергій Володимирович;
+nazar.syngaivskyi@gmail.com;Сингаївський Назарій Андрійович;
+chumakovavasylyna@gmail.com;Чумакова Василина Олегівна;
+andrijvladimirskij@knu.ua;Владимирський Андрій Ілліч;
+yaroslavgukalo@knu.ua;Гукало Ярослав Володимирович;
+zapekabogdan@gmail.com;Запека Богдан Геннадійович;
+pivovarenko@knu.ua;Півоваренко Владислав Віталійович;

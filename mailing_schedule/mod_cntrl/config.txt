@@ -1,0 +1,8 @@
+your_mail = "Your mail@gmail.com"
+your_password = "Your app password"
+subject_practice = "Завдання з МКР 1"
+practice_date_time = "07.06.2022 09:40"
+as_attachment = 1
+files_path = "files"
+results_path = "results"
+randomize = 1

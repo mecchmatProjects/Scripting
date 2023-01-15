@@ -20,55 +20,67 @@ import re
 from random import randint
 
 # prerequisites:
-DEBUG = False
+DEBUG =  False #  True #  
 DEBUG_TO = ["lesoleil@ukr.net", "viktorborodinmm@gmail.com"]  # To whomever you want to send the mail
 
 DIRSTUD = "~/Lectures/Students/"
+DIRMANUAL = "~/Lectures/Cpp/CppCourse"
 FILE_JSON = "2022_1.json"
 
-KURS = "C++" # "Java"  # "Python"
-NUM_STUD = 35
-ADD_TASKS = False
+KURS = "C++" # "Java"  #   "Python"
+NUM_TICKETS = 31
+# Additional tasks from zada4i
+ADD_TASKS = False # True #
 GROUP_NAME = "All"  # "ИВт" #
 RND_QUESTIONS = True  # False #
 
 LECT = True  # False
-MODE = 0  # 0 - start  # 1 # Homework # 2 # start exam 3 # end exam
+MODE = 2  # 0 - start  # 1 # Homework # 2 # start exam 3 # end exam
 
-EXAM_PAPERS = "2021_java_papers.docx"  # "2021_cpp_papers.docx"  # "2021_cpp_papers.docx" #
+EXAM_PAPERS =  "2022_java_papers.docx"  #  "2022_cpp_tickets.docx" # "2021_cpp_papers.docx"  #
 # column for papers numbers, if None then random
 Nep = None
-PAPER_NAME = "2021_java_ep_{}.docx"  # "2021_cpp_ep_{}.docx"
+PAPER_NAME = "2022_cpp_ep_{}.docx" # "2021_java_ep_{}.docx"  #
+
 
 # TODO: XML
+#hdjznnsftnbtbhht
+# {
+#                "page": "KM2",
+#                "repa": "https://github.com/mecchmatProjects/",
+#                "doc": "https://docs.google.com/spreadsheets/d/1cK4m4eC0I4x6hBVq7bZ_0pvzRCu1OudgFqD2Qn5Ql3A/edit?usp=sharing",
+#            },
 # data JSON
 
 students_data = {
 
     "Java": {
         "title": "Мова програмування Java",
-        "man_books": ['LabsJava1_2.pdf'],
-        "table": "2021_Java_3kurs.xlsx",
+        "man_books": [],
+        "table": "2022_Java.xlsx",
         "repa": "https://github.com/mecchmatProjects/JavaCourse",
+        "zoom": "https://us04web.zoom.us/j/74287725977?pwd=b5czrWXrRGO9dAlkTubonlGFijgRP5.1",
+        "Meeting ID": "74287725977",
+        "Passcode": "",
         "telega": "",
-        "doc": "https://docs.google.com/spreadsheets/d/"
-               "1mydlx2eVudSBAacIzTn8v7A2Z8Rdqc2Qf-Y15pWLzEs/edit?usp=sharing",
+        "doc": "https://docs.google.com/spreadsheets/d/1T2b7zMkszHul5Fx4wnSqLZuLyOsvJ4T8LnDvKfUNNdw/edit?usp=sharing",
         "groups": [
             {
                 "page": "KM1",
-                "repa": "https://github.com/mecchmatProjects/JavaPracticum2",
-                "doc": "https://docs.google.com/spreadsheets/d/"
-                       "1rUHfT795-GxrSvZFziE404El7dvR-by9c1pSQTfWF4I/edit?usp=sharing"
+                "repa": "https://github.com/mecchmatProjects/JavaCourse",
+                "doc": "https://docs.google.com/spreadsheets/d/1T2b7zMkszHul5Fx4wnSqLZuLyOsvJ4T8LnDvKfUNNdw/edit?usp=sharing"
 
             },
             {
                 "page": "KM2",
-                "repa": "https://github.com/mecchmatProjects/JavaPracticum2",
-                "doc": "https://docs.google.com/spreadsheets/d/"
-                       "1rUHfT795-GxrSvZFziE404El7dvR-by9c1pSQTfWF4I/edit?usp=sharing"
+                "repa": "https://github.com/mecchmatProjects/JavaCourse",
+                "doc": "https://docs.google.com/spreadsheets/d/1T2b7zMkszHul5Fx4wnSqLZuLyOsvJ4T8LnDvKfUNNdw/edit?usp=sharing"
 
             },
             {
+            "page": "Mex",
+                "repa": "https://github.com/mecchmatProjects/JavaPracticum2",
+                "doc": "https://docs.google.com/spreadsheets/d/1T2b7zMkszHul5Fx4wnSqLZuLyOsvJ4T8LnDvKfUNNdw/edit?usp=sharing"
 
             }
 
@@ -78,57 +90,53 @@ students_data = {
     "C++": {
         "title": "Мова програмування C++",
         "man_books": ["methodicalCPP.pdf","lectС.pdf"],
-        "table": "2022_CppStat.xlsx",
+        "table": "2022_CppMat.xlsx",
         "repa": "https://github.com/mecchmatProjects/CppCourse",
-        "telega": "https://t.me/+EAt902oBExVkYjYy",
-        "doc": "https://docs.google.com/spreadsheets/d/1_qqaPpmJ1itVf-oNeeID88-I2Sddhcdk9rzw__GFzyU/edit?usp=sharing",
-        "zoom": "https://us04web.zoom.us/j/76794815687?pwd=UU5lTzdNcEpna3RNSDc2MUlacWlJdz09",
-        "Meeting ID": "767 9481 5687",
-        "Passcode": "2z0zB6",
+        "telega": "",
+        "doc": "https://docs.google.com/spreadsheets/d/1cK4m4eC0I4x6hBVq7bZ_0pvzRCu1OudgFqD2Qn5Ql3A/edit?usp=sharing",
+        "zoom": "https://us04web.zoom.us/j/74287725977?pwd=b5czrWXrRGO9dAlkTubonlGFijgRP5.1",
+        "Meeting ID": "74287725977",
+        "Passcode": "",
         "groups": [
             {
-                "page": "Група 1",
+                "page": "KM1",
                 "repa": "https://github.com/mecchmatProjects/",
-                "doc": "https://docs.google.com/spreadsheets/d/1_qqaPpmJ1itVf-oNeeID88-I2Sddhcdk9rzw__GFzyU/edit?usp=sharing",
+                "doc": "https://docs.google.com/spreadsheets/d/1cK4m4eC0I4x6hBVq7bZ_0pvzRCu1OudgFqD2Qn5Ql3A/edit?usp=sharing",
             },
+           
             {
-                "page": "Група 2",
+                "page": "Mex",
                 "repa": "https://github.com/mecchmatProjects/",
-                "doc": "https://docs.google.com/spreadsheets/d/1_qqaPpmJ1itVf-oNeeID88-I2Sddhcdk9rzw__GFzyU/edit?usp=sharing",
-            },
-            {
-
+                "doc": "https://docs.google.com/spreadsheets/d/1cK4m4eC0I4x6hBVq7bZ_0pvzRCu1OudgFqD2Qn5Ql3A/edit?usp=sharing",
             }
-
         ]
     },
-
 }
 
 # students_data = json.load(FILE_JSON)
 STUD_TABLE = os.path.join(DIRSTUD, students_data[KURS]["table"])  # "2021_Cpp_2_1kurs.xlsx" #"2021_Java_KM1.xlsx"
 
-print(STUD_TABLE)
-
+print("table:", STUD_TABLE)
 
 wb = xlrd.open_workbook(STUD_TABLE)
 sheet_names = wb.sheet_names()
-print(sheet_names)
+print("sheets:", sheet_names)
 
 # base 0,1
 lst_to = []
 lst_names = []
 
 lst_hw = []
-Hw_Columns = []  # [i for i in range(19,30)]
+Hw_Columns = [i for i in range(4,21)]  # [i for i in range(19,30)]
 
 # ex_papers
 
 lst_exam_papers = []
 # marks
 lst_marks = []
+lst_marks_credit = []
 
-if MODE == 0:
+if MODE < 0:
 
     lst_sheet_name = [sheet_names[0]]
 
@@ -144,7 +152,7 @@ else:
     else:
         lst_sheet_name = [GROUP_NAME]
 
-if MODE==0:
+    print(lst_sheet_name)
     for sheet_name in lst_sheet_name:
         sh = wb.sheet_by_name(sheet_name)
 
@@ -161,46 +169,43 @@ if MODE==0:
                 continue
             lst_to.append(address)
             lst_names.append(fio)
-else:
-    for sheet_name in lst_sheet_name:
 
-        sh = wb.sheet_by_name(sheet_name)
-        print(sh.nrows, sh.ncols)
-        Nmark = sh.ncols - 1
-        for i in range(2, sh.nrows):
-            fio = sh.col_values(1)[i]
-            if not fio:
-                continue
-            address = sh.col_values(2)[i]
+            if MODE>0:
 
-            hws = ""
-            # print(Hw_Columns)
-            for col in Hw_Columns:
-                hw = sh.col_values(col)[i]
-                hws += str(hw) + ";\t"
-                # print(hw)
+                Nmark = sh.ncols -1
 
-            paper = int(sh.col_values(Nep)[i]) if Nep else 0
-            print("p", paper)
+                hws = ""
+                # print(Hw_Columns)
+                for col in Hw_Columns:
+                    hw = sh.col_values(col)[i]
+                    hws += str(hw) + ";\t"
+                    # print(hw)
 
-            mark = sh.col_values(Nmark)[i]
+                paper = int(sh.col_values(Nep)[i]) if Nep else 0
+                print("p", paper)
 
-            lst_to.append(address)
-            lst_names.append(fio)
-            lst_exam_papers.append(paper)
-            lst_hw.append(hws)
-            lst_marks.append(mark)
+                mark = sh.col_values(Nmark)[i]
+
+                lst_exam_papers.append(paper)
+                lst_hw.append(hws)
+                lst_marks.append(mark)
+
+                mark2 = sh.col_values(Nmark-1)[i]
+                lst_marks_credit.append(mark2)
 # just debug:
+
 k = 5
 for a, b in zip(lst_to[-k:], lst_names[-k:]):
     print(a, b)
 
-for a, b in zip(lst_exam_papers[-k:], lst_hw[-k:]):
+for a, b in zip(lst_marks[-k:], lst_hw[-k:]):
     print(a, b)
 input("If all ok, press any key ...")
 
 # Exam Preparation
 if MODE>=2:
+
+    """
     PATTERN_EX_BETW = r"Екзамінаційний білет № \d+(.*?)\n"
     PATTERN_EX = r"Екзамінаційний білет № (\d+)"
     PATTERN_DIG = r"(\d+)."
@@ -278,7 +283,7 @@ if MODE>=2:
                 task += r.text
 
                 # input()
-
+       
     for x, y in dict_papers.items():
         print("numer ", x)
         print("text: ", y)
@@ -289,7 +294,7 @@ if MODE>=2:
         document = Document()
         document.add_paragraph(y)
         document.save(dname)
-
+    """     
 # email body
 # Name,course, repa, repa addres
 body0 = """
@@ -301,16 +306,17 @@ body0 = """
 {}
 Посилання на зум:
 Join Zoom Meeting
-https://us04web.zoom.us/j/76794815687?pwd=UU5lTzdNcEpna3RNSDc2MUlacWlJdz09
+{} 
 
-Meeting ID: 767 9481 5687
-Passcode: 2z0zB6
+Meeting ID: {}
+Passcode: {}
 
-У вкладенні пересилаю задачник.
 Підручник за алресами:
 https://github.com/mecchmatProjects/CppCourse/blob/master/lect%D0%A1.pdf
 та
 https://github.com/mecchmatProjects/CppCourse/blob/master/lect%D0%A1pp.pdf
+
+У вкладенні пересилаю задачник.
 
 Поточні оцінки та домашні завдання Гугл-документі:
 {}
@@ -325,19 +331,29 @@ https://github.com/mecchmatProjects/CppCourse/blob/master/lect%D0%A1pp.pdf
 Please don't reply: this message is sent by robot.
 In case of any issue reply to viktorborodinmm@gmail.com
 """
-# name, repa_lect, n_temy, title, HW, mark, doc
+# name, repa_lect, title, HW, mark, doc
 body1 = """
 {} Homework 
 Шановний(шановна) {}!
 Репозиторій з матеріалами лекцій:
 {}
-У вкладенні пересилаю задачник з {} теми.
+Посилання на записи: 
+https://drive.google.com/drive/u/0/folders/1-cLswO3bEX9VpoCnQ4n0ZVOC_qjujcDX
 
 Ваші домашні завдання з курсу "{}" {}
 
-Ваші поточні бали {}.
+Ваші поточні бали {}. 
 
 Докладніше на Google-docs {}.
+
+У випадку - якщо ви ще не створили репозиторій - повідомьте в загальний чат - які саме у вас проблеми.
+Вчасне інформування про проблеми може допомогти.
+
+Нагадую, що можна також здавати курсові проекти та реферати (укр.мова, тема з JavaSE яка не розглядалася на лекціях,
+кільксть сторінок довільна - якість і кількість їх відповідно оцінюються))
+
+Якщо ви згодні з даною ітоговою оцінкою -відпишиться.
+Якщо ні- чекаю на іспиті.
 
 Віктор Бородін
 
@@ -351,14 +367,16 @@ In case of any issue reply to viktorborodinmm@gmail.com
 body_exst = """
 Шановний(шановна){}!
 Ваш білет з курсу "{}" номер {} у вкладенні.
-Текст білету продубльований сюди:
+Текст білету дивиться у вкладення:
 {} 
 
 
 Якщо погано відображається - то дивиться у вкладення.
+Ті, хто вже отримав оцінку з іспиту - нічого не роблять,
+Від інших чекаю відповідь на протязі дня.
 
 У випадку запитань або проблем з відкриттям 
-звертайтеся до викладача на конференцію або телеграм. 
+звертайтеся до викладача на конференцію/пошту або телеграм. 
 
 Віктор Бородін
 
@@ -372,7 +390,7 @@ In case of any issue reply to viktorborodinmm@gmail.com
 
 body_ex_end = """
 Шановний(шановна){}!
-Ваша оцінка за іспит з курсу "{}" {} та ітогова оцінка {}.
+Ваша оцінка за залік з курсу "{}" {} та ітогова оцінка {}.
 Якщо ви згодні з цією оцінкою пришлить відповідь на viktorborodinmm@gmail.com
 або телеграм.
  
@@ -390,11 +408,11 @@ In case of any issue reply to viktorborodinmm@gmail.com
 """
 
 EMAIL = 'vborodin001@gmail.com'
-PASSWORD = 'iaGS7ahwae'
+PASSWORD = 'uszrxarwxyekbkge' # 'hdjznnsftnbtbhht' # "tlxrwkvossfsnudx" # 'iaGS7ahwae'
 SERVER = 'imap.gmail.com'
 
 email_id = 'vborodin001@gmail.com'
-email_pass = 'iaGM7ahwae'
+email_pass =   'iaGM7ahwae'
 
 SMTP_HOST = 'smtp.gmail.com'
 SMTP_PORT = 465
@@ -411,15 +429,17 @@ print(lst_names)
 where = DEBUG_TO if DEBUG else lst_to
 print(where)
 
-for k, to in enumerate(where):  # enumerate(DEBUG_TO):  #
+for k, to in enumerate(where):  # enumerate(DEBUG_TO):  # 
 
     name = lst_names[k]
+    # print(k,name,lst_hw[k], lst_marks[k])
 
-    if MODE>2:
+    if MODE>=2:
         # exam start
         # random  or chosen
-        num_pap = randint(1, NUM_STUD) if RND_QUESTIONS else lst_exam_papers[k]
-        paper_item = dict_papers[num_pap]
+        num_pap = randint(1, NUM_TICKETS-1) if RND_QUESTIONS else lst_exam_papers[k]
+        # paper_item = dict_papers[num_pap]
+        paper_item = PAPER_NAME.format(num_pap)
     # print(body) # body.format(r1,r2,)
     print("{}: to {} for {} ".format(k, to, name))
 
@@ -427,11 +447,13 @@ for k, to in enumerate(where):  # enumerate(DEBUG_TO):  #
     msg = MIMEMultipart()
     if MODE == 0:
         # Name, course, repa, repa        addres
-        Text = body0.format(KURS, name, COURSE, REPA, ADDRESS_GD)
+        Text = body0.format(KURS, name, COURSE, REPA, students_data[KURS]["zoom"],
+                            students_data[KURS]["Meeting ID"] , students_data[KURS]["Passcode"], ADDRESS_GD)
         print(Text)
-        msg.attach(MIMEText(body0.format(KURS, name, COURSE, REPA, ADDRESS_GD), 'plain', 'utf-8'))
+
+        msg.attach(MIMEText(Text, 'plain', 'utf-8'))
     elif MODE == 1:
-        # name, repa_lect, title, HW, mark, doc
+        # # name, repa_lect, title, HW, mark, doc
         Text = body1.format(KURS, name, students_data[KURS]["repa"], COURSE, lst_hw[k], lst_marks[k], ADDRESS_GD
                             )
         print(Text)
@@ -443,7 +465,7 @@ for k, to in enumerate(where):  # enumerate(DEBUG_TO):  #
 
         msg.attach(MIMEText(Text, 'plain', 'utf-8'))
     elif MODE == 3:
-        Text = body_ex_end.format(name, COURSE, lst_marks, lst_marks, ADDRESS_GD)
+        Text = body_ex_end.format(name, COURSE, lst_marks_credit[k], lst_marks[k], ADDRESS_GD)
         print(Text)
 
         msg.attach(MIMEText(Text, 'plain', 'utf-8'))
@@ -453,10 +475,9 @@ for k, to in enumerate(where):  # enumerate(DEBUG_TO):  #
     msg['To'] = to  # ", ".join(recipients_emails)
 
     if MODE <= 1:
-        files = ['methodicalCpp.pdf'] # students_data[KURS]["man_books"] # [ # ['LabsJava5.pdf']  #  ,
-
+        files = ['Collect.rtf']  #["methodicalCPP.pdf"] # students_data[KURS]["man_books"] # [ # ['LabsJava5.pdf']  #  ,
         for path in files:
-            #path = os.path.join("~/Lectures/Cpp/CppCourse",path)
+            # path = os.path.join(DIRMANUAL, path)
 
             if not os.path.isfile(path):
                 print(path, " do not exists")

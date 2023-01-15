@@ -1,0 +1,2 @@
+stud1@gmail.com;Студент1;
+stud2@gmail.com;Студент2;*
